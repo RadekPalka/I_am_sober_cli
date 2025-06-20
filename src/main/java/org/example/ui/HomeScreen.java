@@ -1,10 +1,17 @@
 package org.example.ui;
 
-public class HomeScreen implements Screen{
-    public static HomeScreen instance;
+import java.util.List;
+
+public class HomeScreen extends AbstractScreen{
+    private static HomeScreen instance;
+
+
 
     private HomeScreen(){
-
+        this.menu= List.of(
+                new MenuItem("Register", ()->System.out.println("You are registered")),
+                new MenuItem("Log in", ()-> System.out.println("You are login"))
+        );
     }
 
     public static HomeScreen getInstance(){
@@ -20,7 +27,8 @@ public class HomeScreen implements Screen{
     }
 
     public void displayMenu(){
-        System.out.println("Choose option:");
-        System.out.println("1. Register");
+        for (int i=0; i< menu.size(); i++){
+            System.out.printf("%d-> %s%n", i+1, menu.get(i).getLabel());
+        }
     }
 }
