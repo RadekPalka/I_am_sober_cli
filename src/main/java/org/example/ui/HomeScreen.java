@@ -1,5 +1,7 @@
 package org.example.ui;
 
+import org.example.context.AppContext;
+
 import java.util.List;
 
 public class HomeScreen extends AbstractScreen{
@@ -21,14 +23,26 @@ public class HomeScreen extends AbstractScreen{
         }
         return instance;
     }
-
+    @Override
     public void displayHeader(){
         System.out.println("Welcome to I am sober cli app");
     }
 
+    @Override
     public void displayMenu(){
         for (int i=0; i< menu.size(); i++){
             System.out.printf("%d-> %s%n", i+1, menu.get(i).getLabel());
         }
+    }
+
+    @Override
+    public int getOptionFromUser() {
+        System.out.print("Choose option");
+        return AppContext.getInstance().getScanner().nextInt();
+    }
+
+    @Override
+    public void checkAnswer(int option){
+
     }
 }
