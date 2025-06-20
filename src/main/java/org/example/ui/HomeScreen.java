@@ -2,6 +2,7 @@ package org.example.ui;
 
 import org.example.context.AppContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeScreen extends AbstractScreen{
@@ -10,10 +11,10 @@ public class HomeScreen extends AbstractScreen{
 
 
     private HomeScreen(){
-        this.menu= List.of(
+        this.menu= new ArrayList<>(List.of(
                 new MenuItem("Register", ()->System.out.println("You are registered")),
                 new MenuItem("Log in", ()-> System.out.println("You are login"))
-        );
+        ));
     }
 
     public static HomeScreen getInstance(){
