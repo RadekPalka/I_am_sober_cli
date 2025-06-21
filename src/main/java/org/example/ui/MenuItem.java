@@ -11,4 +11,8 @@ public class MenuItem {
     public String getLabel(){
         return label;
     }
+
+    public Runnable getAction(){
+        return action;
+    }
 }
