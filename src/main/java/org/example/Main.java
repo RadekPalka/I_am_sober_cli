@@ -12,15 +12,14 @@ public class Main {
         HomeScreen.getInstance().displayMenu();
         while(!isUserInputCorrect || !isInRange){
             try{
-                isInRange = true;
                 HomeScreen.getInstance().getOptionFromUser();
                 isInRange = Validator.getInstance().isWithinRange(AppContext.getInstance().getUserOption()-1, HomeScreen.getInstance().getMenuArrayLength());
                 isUserInputCorrect = true;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 isUserInputCorrect = false;
                 System.out.println("Incorrect character. Please try again");
             }
-            if (!isInRange){
+            if (isUserInputCorrect && !isInRange){
                 System.out.println("Incorrect number. Please try again.");
             }
         }
