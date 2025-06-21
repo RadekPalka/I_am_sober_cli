@@ -3,6 +3,7 @@ package org.example.ui;
 public interface Screen {
     public void displayHeader();
     public void displayMenu();
-    public int getOptionFromUser();
-    public void checkAnswer(int option);
+    public void getOptionFromUser();
+    public void runMenuAction(int option);
+    public int getMenuArrayLength();
 }

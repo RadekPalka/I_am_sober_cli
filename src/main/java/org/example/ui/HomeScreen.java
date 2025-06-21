@@ -35,13 +35,23 @@ public class HomeScreen extends AbstractScreen{
     }
 
     @Override
-    public int getOptionFromUser() {
+    public void getOptionFromUser() {
         System.out.print("Choose option: ");
-        return AppContext.getInstance().getScanner().nextInt();
+        String userOption = AppContext.getInstance().getScanner().nextLine();
+
+        AppContext.getInstance().setUserOption(Integer.parseInt(userOption));
     }
 
     @Override
-    public void checkAnswer(int option){
+    public void runMenuAction(int option){
         menu[option-1].getAction().run();
     }
+
+    @Override
+    public int getMenuArrayLength() {
+        return menu.length;
+    }
+
+
+
 }
