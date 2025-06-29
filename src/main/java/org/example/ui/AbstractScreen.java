@@ -6,10 +6,7 @@ import java.util.List;
 
 public abstract class AbstractScreen implements Screen{
     protected MenuItem[] menu;
-    @Override
-    public void displayHeader(){
-        System.out.println("Welcome to I am sober cli app");
-    }
+
 
     @Override
     public void displayMenu(){

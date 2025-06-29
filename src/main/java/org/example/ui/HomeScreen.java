@@ -1,6 +1,7 @@
 package org.example.ui;
 
 import org.example.context.AppContext;
+import org.example.utils.ScreenManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +12,8 @@ public class HomeScreen extends AbstractScreen{
 
     private HomeScreen(){
         this.menu = new MenuItem[]{
-                new MenuItem("Register", () -> System.out.println("You are registered")),
-                new MenuItem("Log in", () -> System.out.println("You are login"))
+                new MenuItem("Register", () -> ScreenManager.getInstance().showScreen(RegisterScreen.getInstance())),
+                new MenuItem("Log in", () -> ScreenManager.getInstance().showScreen(LoginScreen.getInstance()))
         };
     }
 
@@ -25,6 +26,9 @@ public class HomeScreen extends AbstractScreen{
     }
 
 
-
+    @Override
+    public void displayHeader(){
+        System.out.println("Welcome to I am sober cli app");
+    }
 
 }
