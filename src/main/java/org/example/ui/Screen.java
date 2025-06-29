@@ -6,4 +6,6 @@ public interface Screen {
     public void getOptionFromUser();
     public void runMenuAction(int option);
     public int getMenuArrayLength();
+
+
 }
